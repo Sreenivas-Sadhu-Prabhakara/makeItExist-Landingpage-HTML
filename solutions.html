@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make It Exist | The Offer</title>
+    <link rel="icon" type="image/png" href="assets/aim-logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        aim: {
+                            blue: '#0033A0',
+                            gold: '#FFB81C',
+                            navy: '#001F5F',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@700;800;900&display=swap');
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.85);
+            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 51, 160, 0.1);
+        }
+        .dark .glass {
+            background: rgba(15, 23, 42, 0.85);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #0033A0 0%, #2563EB 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .dark .text-gradient {
+            background: linear-gradient(135deg, #FFB81C 0%, #FBBF24 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-white overflow-x-hidden selection:bg-aim-gold selection:text-aim-blue transition-colors duration-300">
+
+    <!-- Navigation (consistent with index & team) -->
+    <nav class="fixed w-full z-50 glass transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <img src="assets/aim-logo.png" alt="AIM Logo" class="w-10 h-10 object-contain">
+                <div class="leading-tight">
+                    <span class="block font-display font-black text-lg tracking-tighter text-aim-blue dark:text-white uppercase">Make It<span class="text-aim-gold">Exist</span></span>
+                    <span class="block text-[10px] font-bold tracking-widest text-slate-400 dark:text-slate-500 uppercase">Powered by AIM Students</span>
+                </div>
+            </a>
+
+            <div class="hidden md:flex items-center space-x-8 font-semibold text-sm text-slate-600 dark:text-slate-300">
+                <a href="index.html" class="hover:text-aim-blue dark:hover:text-aim-gold transition">Home</a>
+                <a href="solutions.html" class="text-aim-blue dark:text-white">The Offer</a>
+                <a href="team.html" class="hover:text-aim-blue dark:hover:text-aim-gold transition">The Builders</a>
+            </div>
+
+            <a href="solutions.html#contact" class="hidden md:flex px-6 py-2.5 bg-aim-blue text-white rounded-lg font-bold hover:bg-aim-navy transition shadow-lg shadow-blue-900/20 transform hover:-translate-y-0.5">
+                Launch Idea
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <header class="relative pt-40 pb-20 lg:pt-52 lg:pb-28 overflow-hidden">
+        <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-green-100/40 to-transparent dark:from-green-900/10 rounded-full blur-3xl -z-10 translate-x-1/4 -translate-y-1/4"></div>
+        <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-purple-100/30 to-transparent dark:from-purple-900/10 rounded-full blur-3xl -z-10 -translate-x-1/4 translate-y-1/4"></div>
+
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 mb-8 rounded-full bg-blue-50 dark:bg-slate-800 border border-blue-100 dark:border-slate-700" data-aos="fade-down">
+                <span class="w-2 h-2 rounded-full bg-aim-gold animate-pulse"></span>
+                <span class="text-xs font-bold text-aim-blue dark:text-aim-gold tracking-wide uppercase">Choose Your Solution</span>
+            </div>
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-slate-900 dark:text-white mb-6 tracking-tight" data-aos="fade-up">
+                Our <span class="text-gradient">Capabilities.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+                We categorize our projects based on complexity and resource availability. 
+                Our goal is to keep costs as close to <strong class="text-slate-900 dark:text-white">zero</strong> as possible for students.
+            </p>
+        </div>
+    </header>
+
+    <!-- How It Works Mini-Section -->
+    <section class="max-w-5xl mx-auto px-6 pb-20">
+        <div class="grid md:grid-cols-3 gap-6 text-center" data-aos="fade-up">
+            <div class="flex flex-col items-center gap-3 p-6">
+                <div class="w-12 h-12 rounded-full bg-aim-blue text-white flex items-center justify-center font-black text-lg">1</div>
+                <h3 class="font-display font-bold text-slate-900 dark:text-white">Pick a Tier</h3>
+                <p class="text-slate-500 dark:text-slate-400 text-sm">Choose the solution level that matches your needs below.</p>
+            </div>
+            <div class="flex flex-col items-center gap-3 p-6">
+                <div class="w-12 h-12 rounded-full bg-aim-blue text-white flex items-center justify-center font-black text-lg">2</div>
+                <h3 class="font-display font-bold text-slate-900 dark:text-white">We Sprint</h3>
+                <p class="text-slate-500 dark:text-slate-400 text-sm">Our builders run a weekend sprint to bring your idea to life.</p>
+            </div>
+            <div class="flex flex-col items-center gap-3 p-6">
+                <div class="w-12 h-12 rounded-full bg-aim-blue text-white flex items-center justify-center font-black text-lg">3</div>
+                <h3 class="font-display font-bold text-slate-900 dark:text-white">You Launch</h3>
+                <p class="text-slate-500 dark:text-slate-400 text-sm">Deployed, handed over, and ready for your audience.</p>
+            </div>
+        </div>
+        <div class="flex justify-center mt-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="flex items-center gap-2 text-sm text-slate-400 dark:text-slate-500">
+                <i class="ph-bold ph-arrow-down text-aim-gold"></i>
+                <span>Select the tier that fits your project</span>
+                <i class="ph-bold ph-arrow-down text-aim-gold"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Tiers -->
+    <section class="max-w-7xl mx-auto px-6 pb-24 grid lg:grid-cols-3 gap-8 items-start">
+        
+        <!-- Websites Tier -->
+        <div class="bg-white dark:bg-slate-800 rounded-3xl shadow-xl overflow-hidden border-2 border-transparent hover:border-green-400 dark:hover:border-green-400 transition-all duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="0">
+            <div class="bg-green-50 dark:bg-green-900/20 p-8 border-b border-green-100 dark:border-green-800/30">
+                <div class="w-12 h-12 bg-green-100 dark:bg-green-900/40 text-green-600 dark:text-green-400 rounded-xl flex items-center justify-center mb-4">
+                    <i class="ph-fill ph-globe text-2xl"></i>
+                </div>
+                <h3 class="font-display text-2xl font-bold text-slate-900 dark:text-white">Websites</h3>
+                <p class="text-sm font-bold text-green-600 dark:text-green-400 mt-2 tracking-wider">● NO CHARGE / FREE</p>
+            </div>
+            <div class="p-8">
+                <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">Perfect for clubs, portfolios, and event landing pages. We build it, you own it.</p>
+                <ul class="space-y-4 text-sm font-medium text-slate-700 dark:text-slate-300 mb-8">
+                    <li class="flex gap-3"><i class="ph-bold ph-check text-green-500"></i> Custom HTML/CSS Design</li>
+                    <li class="flex gap-3"><i class="ph-bold ph-check text-green-500"></i> Hosted on Vercel/Netlify</li>
+                    <li class="flex gap-3"><i class="ph-bold ph-check text-green-500"></i> Mobile Responsive</li>
+                    <li class="flex gap-3"><i class="ph-bold ph-check text-green-500"></i> Fast Turnaround (Weekend)</li>
+                </ul>
+                <a href="booking.html" class="block w-full py-3 rounded-xl border-2 border-green-500 text-green-600 dark:text-green-400 font-bold hover:bg-green-50 dark:hover:bg-green-900/20 transition text-center">Reserve Slot</a>
+            </div>
+        </div>
+
+        <!-- Web & Mobile Apps Tier -->
+        <div class="bg-white dark:bg-slate-800 rounded-3xl shadow-xl overflow-hidden border-2 border-aim-blue dark:border-aim-gold relative transform lg:scale-105 z-10" data-aos="fade-up" data-aos-delay="100">
+            <div class="absolute top-0 left-0 w-full bg-aim-gold text-aim-blue text-xs font-bold text-center py-1.5 tracking-wider">MOST REQUESTED</div>
+            <div class="bg-blue-50 dark:bg-blue-900/20 p-8 border-b border-blue-100 dark:border-blue-800/30 mt-2">
+                <div class="w-12 h-12 bg-aim-blue text-white rounded-xl flex items-center justify-center mb-4">
+                    <i class="ph-fill ph-device-mobile text-2xl"></i>
+                </div>
+                <h3 class="font-display text-2xl font-bold text-slate-900 dark:text-white">Web & Mobile Apps</h3>
+                <p class="text-sm font-bold text-aim-blue dark:text-aim-gold mt-2 tracking-wider">● SLIGHT CHARGES</p>
+            </div>
+            <div class="p-8">
+                <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">For interactive solutions needing databases or user logins. Costs depend on server requirements.</p>
+                <ul class="space-y-4 text-sm font-medium text-slate-700 dark:text-slate-300 mb-8">
+                    <li class="flex gap-3"><i class="ph-bold ph-check text-aim-blue dark:text-aim-gold"></i> React / Next.js Frameworks</li>
+                    <li class="flex gap-3"><i class="ph-bold ph-check text-aim-blue dark:text-aim-gold"></i> User Authentication</li>
+                    <li class="flex gap-3"><i class="ph-bold ph-check text-aim-blue dark:text-aim-gold"></i> Database Integration</li>
+                    <li class="flex gap-3"><i class="ph-bold ph-check text-aim-blue dark:text-aim-gold"></i> Subject to Dev Availability</li>
+                </ul>
+                <a href="booking.html" class="block w-full py-3 rounded-xl bg-aim-blue text-white font-bold hover:bg-aim-navy transition text-center">Reserve Slot</a>
+            </div>
+        </div>
+
+        <!-- AI & Analytics Tier -->
+        <div class="bg-white dark:bg-slate-800 rounded-3xl shadow-xl overflow-hidden border-2 border-transparent hover:border-purple-500 dark:hover:border-purple-400 transition-all duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
+            <div class="bg-purple-50 dark:bg-purple-900/20 p-8 border-b border-purple-100 dark:border-purple-800/30">
+                <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900/40 text-purple-600 dark:text-purple-400 rounded-xl flex items-center justify-center mb-4">
+                    <i class="ph-fill ph-brain text-2xl"></i>
+                </div>
+                <h3 class="font-display text-2xl font-bold text-slate-900 dark:text-white">AI & Analytics</h3>
+                <p class="text-sm font-bold text-purple-600 dark:text-purple-400 mt-2 tracking-wider">● PROJECT BASED</p>
+            </div>
+            <div class="p-8">
+                <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">Leveraging LLMs and predictive models. Highly dependent on infrastructure costs and specialized talent.</p>
+                <ul class="space-y-4 text-sm font-medium text-slate-700 dark:text-slate-300 mb-8">
+                    <li class="flex gap-3"><i class="ph-bold ph-check text-purple-500 dark:text-purple-400"></i> OpenAI / Gemini Integration</li>
+                    <li class="flex gap-3"><i class="ph-bold ph-check text-purple-500 dark:text-purple-400"></i> Data Analytics Dashboards</li>
+                    <li class="flex gap-3"><i class="ph-bold ph-check text-purple-500 dark:text-purple-400"></i> Automation Scripts</li>
+                    <li class="flex gap-3"><i class="ph-bold ph-warning text-orange-500 dark:text-orange-400"></i> High Infra Dependencies</li>
+                </ul>
+                <a href="booking.html" class="block w-full py-3 rounded-xl border-2 border-purple-500 text-purple-600 dark:text-purple-400 font-bold hover:bg-purple-50 dark:hover:bg-purple-900/20 transition text-center">Contact Us</a>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Wave Divider -->
+    <div class="relative h-24 overflow-hidden -mt-1">
+        <svg viewBox="0 0 1440 320" class="absolute bottom-0 w-full h-full text-aim-blue fill-current transform scale-150">
+            <path d="M0,160L48,176C96,192,192,224,288,224C384,224,480,192,576,165.3C672,139,768,117,864,128C960,139,1056,181,1152,197.3C1248,213,1344,203,1392,197.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+    </div>
+
+    <!-- FAQ / What to Expect Section -->
+    <section class="bg-aim-blue py-20 text-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="font-display text-3xl md:text-4xl font-black mb-4">What to Expect</h2>
+                <p class="text-blue-200 max-w-xl mx-auto">Transparency is core to how we work. Here's what happens after you reach out.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-12 text-center">
+                <div class="p-6" data-aos="fade-up" data-aos-delay="0">
+                    <div class="w-16 h-16 mx-auto bg-white/10 rounded-2xl flex items-center justify-center mb-4 border border-white/10">
+                        <i class="ph-fill ph-chat-circle-dots text-4xl text-aim-gold"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Quick Discovery Call</h3>
+                    <p class="text-blue-200 text-sm">We'll reach out within 24 hours to understand your idea, scope, and timeline.</p>
+                </div>
+                <div class="p-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 mx-auto bg-white/10 rounded-2xl flex items-center justify-center mb-4 border border-white/10">
+                        <i class="ph-fill ph-check-square text-4xl text-aim-gold"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Scope & Agreement</h3>
+                    <p class="text-blue-200 text-sm">We define what's in and what's out. No surprises, no hidden fees. You see the plan before we start.</p>
+                </div>
+                <div class="p-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 mx-auto bg-white/10 rounded-2xl flex items-center justify-center mb-4 border border-white/10">
+                        <i class="ph-fill ph-rocket-launch text-4xl text-aim-gold"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Weekend Sprint & Launch</h3>
+                    <p class="text-blue-200 text-sm">Our team builds during the weekend and delivers a deployed product by Sunday evening.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA: Meet the Team -->
+    <section id="contact" class="py-24 px-6">
+        <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full bg-blue-50 dark:bg-slate-800 border border-blue-100 dark:border-slate-700">
+                <span class="w-2 h-2 rounded-full bg-aim-gold animate-pulse"></span>
+                <span class="text-xs font-bold text-aim-blue dark:text-aim-gold tracking-wide uppercase">Ready to Build?</span>
+            </div>
+            <h2 class="font-display text-3xl md:text-4xl font-black text-slate-900 dark:text-white mb-6">Let's Make It Exist</h2>
+            <p class="text-slate-600 dark:text-slate-300 text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
+                Got an idea? A club project? A startup MVP? Drop us a line and our builders will take it from concept to launch.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <a href="mailto:makeitexist@aim.edu" class="px-8 py-4 bg-aim-blue text-white rounded-xl font-bold shadow-xl shadow-blue-600/20 hover:bg-aim-navy transition flex items-center gap-2">
+                    <i class="ph-bold ph-envelope"></i> Email Us
+                </a>
+                <a href="team.html" class="px-8 py-4 bg-white dark:bg-slate-800 text-slate-700 dark:text-white border border-slate-200 dark:border-slate-700 rounded-xl font-bold hover:border-aim-gold hover:text-aim-gold transition flex items-center gap-2">
+                    Meet the Builders <i class="ph-bold ph-arrow-right"></i>
+                </a>
+            </div>
+            <p class="text-slate-400 dark:text-slate-500 text-sm">Curious who's behind this? <a href="team.html" class="text-aim-blue dark:text-aim-gold font-semibold hover:underline">Meet the team →</a></p>
+        </div>
+    </section>
+
+    <!-- Footer (consistent with index & team) -->
+    <footer class="bg-slate-900 dark:bg-black text-slate-500 py-12 text-center text-sm border-t border-slate-800 dark:border-slate-900">
+        <div class="flex items-center justify-center gap-3 mb-4">
+            <img src="assets/aim-logo.png" alt="AIM Logo" class="w-6 h-6 rounded-full">
+            <span class="font-display font-bold text-slate-300 uppercase tracking-widest">Make It Exist</span>
+        </div>
+        <p class="mb-2">&copy; 2026 Make It Exist Project. A student initiative at AIM Manila.</p>
+        <p>Built with <span class="text-red-500">♥</span> and coffee at AIM Manila.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+        // Dark Mode Detection
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
+</body>
+</html>

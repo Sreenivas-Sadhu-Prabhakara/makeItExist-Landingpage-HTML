@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make It Exist | The Builders</title>
+    <link rel="icon" type="image/png" href="assets/aim-logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        aim: {
+                            blue: '#0033A0',
+                            gold: '#FFB81C',
+                            navy: '#001F5F',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@700;800;900&display=swap');
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.85);
+            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 51, 160, 0.1);
+        }
+        .dark .glass {
+            background: rgba(15, 23, 42, 0.85);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #0033A0 0%, #2563EB 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .dark .text-gradient {
+            background: linear-gradient(135deg, #FFB81C 0%, #FBBF24 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-white overflow-x-hidden selection:bg-aim-gold selection:text-aim-blue transition-colors duration-300">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <img src="assets/aim-logo.png" alt="AIM Logo" class="w-10 h-10 object-contain">
+                <div class="leading-tight">
+                    <span class="block font-display font-black text-lg tracking-tighter text-aim-blue dark:text-white uppercase">Make It<span class="text-aim-gold">Exist</span></span>
+                    <span class="block text-[10px] font-bold tracking-widest text-slate-400 dark:text-slate-500 uppercase">Powered by AIM Students</span>
+                </div>
+            </a>
+
+            <div class="hidden md:flex items-center space-x-8 font-semibold text-sm text-slate-600 dark:text-slate-300">
+                <a href="index.html" class="hover:text-aim-blue dark:hover:text-aim-gold transition">Home</a>
+                <a href="solutions.html" class="hover:text-aim-blue dark:hover:text-aim-gold transition">The Offer</a>
+                <a href="team.html" class="text-aim-blue dark:text-white">The Builders</a>
+            </div>
+
+            <a href="booking.html" class="hidden md:flex px-6 py-2.5 bg-aim-blue text-white rounded-lg font-bold hover:bg-aim-navy transition shadow-lg shadow-blue-900/20 transform hover:-translate-y-0.5">
+                Book Now
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <header class="relative pt-40 pb-20 lg:pt-52 lg:pb-28 overflow-hidden">
+        <div class="absolute top-0 left-0 w-[600px] h-[600px] bg-gradient-to-br from-aim-gold/20 to-transparent dark:from-aim-gold/5 rounded-full blur-3xl -z-10 -translate-x-1/4 -translate-y-1/4"></div>
+        <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-gradient-to-tl from-blue-100/40 to-transparent dark:from-aim-blue/10 rounded-full blur-3xl -z-10 translate-x-1/4 translate-y-1/4"></div>
+
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 mb-8 rounded-full bg-blue-50 dark:bg-slate-800 border border-blue-100 dark:border-slate-700" data-aos="fade-down">
+                <span class="w-2 h-2 rounded-full bg-aim-gold animate-pulse"></span>
+                <span class="text-xs font-bold text-aim-blue dark:text-aim-gold tracking-wide uppercase">Meet the Team Behind the Magic</span>
+            </div>
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-slate-900 dark:text-white mb-6 tracking-tight" data-aos="fade-up">
+                The Weekend <br><span class="text-gradient">Sprint.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+                From whiteboard concept on Friday to deployed application on Sunday. We're a group of AIM students who believe great ideas deserve to exist — and we make sure they do.
+            </p>
+        </div>
+    </header>
+
+    <!-- Sprint Timeline Cards -->
+    <section class="max-w-7xl mx-auto px-6 pb-24">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="font-display text-3xl md:text-4xl font-black text-slate-900 dark:text-white mb-4">The 48-Hour Process</h2>
+            <p class="text-slate-500 dark:text-slate-400 max-w-xl mx-auto">Every project follows our battle-tested weekend sprint framework. Fast, focused, and fully deployed.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            
+            <div class="group relative overflow-hidden rounded-3xl aspect-[4/3] bg-slate-200 dark:bg-slate-800 shadow-xl" data-aos="fade-up" data-aos-delay="0">
+                <img src="assets/ideating.png" alt="AIM Students Brainstorming" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700 scale-105 group-hover:scale-100">
+                <div class="absolute inset-0 bg-gradient-to-t from-aim-blue/90 via-aim-blue/40 to-transparent opacity-90"></div>
+                <div class="absolute top-4 left-4 w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white font-black text-lg border border-white/30">1</div>
+                <div class="absolute bottom-0 left-0 w-full p-8 text-white">
+                    <div class="inline-block px-3 py-1 bg-aim-gold text-aim-blue text-xs font-bold rounded-full mb-3">FRIDAY PM</div>
+                    <p class="font-display font-bold text-2xl">The Concept</p>
+                    <p class="text-sm text-blue-100 mt-2">Ideation and roadmapping in the study lounge. We define scope, pick tools, and sketch wireframes.</p>
+                </div>
+            </div>
+
+            <div class="group relative overflow-hidden rounded-3xl aspect-[4/3] bg-slate-200 dark:bg-slate-800 shadow-xl" data-aos="fade-up" data-aos-delay="150">
+                <img src="assets/build.png" alt="Students Coding in Lab" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700 scale-105 group-hover:scale-100">
+                <div class="absolute inset-0 bg-gradient-to-t from-aim-blue/90 via-aim-blue/40 to-transparent opacity-90"></div>
+                <div class="absolute top-4 left-4 w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white font-black text-lg border border-white/30">2</div>
+                <div class="absolute bottom-0 left-0 w-full p-8 text-white">
+                    <div class="inline-block px-3 py-1 bg-aim-gold text-aim-blue text-xs font-bold rounded-full mb-3">SATURDAY AM/PM</div>
+                    <p class="font-display font-bold text-2xl">The Build</p>
+                    <p class="text-sm text-blue-100 mt-2">Heavy lifting — coding, designing, and caffeine-fueled sprints in the computer lab.</p>
+                </div>
+            </div>
+
+            <div class="group relative overflow-hidden rounded-3xl aspect-[4/3] bg-slate-200 dark:bg-slate-800 shadow-xl" data-aos="fade-up" data-aos-delay="300">
+                <img src="assets/launch.png" alt="Project Launch at AIM" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700 scale-105 group-hover:scale-100">
+                <div class="absolute inset-0 bg-gradient-to-t from-aim-blue/90 via-aim-blue/40 to-transparent opacity-90"></div>
+                <div class="absolute top-4 left-4 w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white font-black text-lg border border-white/30">3</div>
+                <div class="absolute bottom-0 left-0 w-full p-8 text-white">
+                    <div class="inline-block px-3 py-1 bg-aim-gold text-aim-blue text-xs font-bold rounded-full mb-3">SUNDAY EVE</div>
+                    <p class="font-display font-bold text-2xl">The Launch</p>
+                    <p class="text-sm text-blue-100 mt-2">QA, deployment to Vercel, and handover. Ready for the student body by Sunday night.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Divider Wave -->
+    <div class="relative h-24 overflow-hidden -mt-1">
+        <svg viewBox="0 0 1440 320" class="absolute bottom-0 w-full h-full text-aim-blue fill-current transform scale-150">
+            <path d="M0,160L48,176C96,192,192,224,288,224C384,224,480,192,576,165.3C672,139,768,117,864,128C960,139,1056,181,1152,197.3C1248,213,1344,203,1392,197.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+    </div>
+
+    <!-- Team Values Section -->
+    <section class="bg-aim-blue py-20 text-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="font-display text-3xl md:text-4xl font-black mb-4">What Drives Us</h2>
+                <p class="text-blue-200 max-w-xl mx-auto">We're not a company. We're a student collective with a shared mission: make tech accessible for every AIM student.</p>
+            </div>
+            <div class="grid md:grid-cols-4 gap-8 text-center">
+                <div class="p-6" data-aos="fade-up" data-aos-delay="0">
+                    <div class="w-16 h-16 mx-auto bg-white/10 rounded-2xl flex items-center justify-center mb-4 border border-white/10">
+                        <i class="ph-fill ph-hand-heart text-4xl text-aim-gold"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Zero Profit</h3>
+                    <p class="text-blue-200 text-sm">Every project is done at cost or free. We don't charge labor — only pass-through hosting fees when needed.</p>
+                </div>
+                <div class="p-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 mx-auto bg-white/10 rounded-2xl flex items-center justify-center mb-4 border border-white/10">
+                        <i class="ph-fill ph-lightning text-4xl text-aim-gold"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Speed First</h3>
+                    <p class="text-blue-200 text-sm">Our weekend sprint model means ideas don't sit in backlogs. We ship fast and iterate faster.</p>
+                </div>
+                <div class="p-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 mx-auto bg-white/10 rounded-2xl flex items-center justify-center mb-4 border border-white/10">
+                        <i class="ph-fill ph-graduation-cap text-4xl text-aim-gold"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Learn by Doing</h3>
+                    <p class="text-blue-200 text-sm">Every project is a learning opportunity. We grow our skills while delivering real value to the community.</p>
+                </div>
+                <div class="p-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 mx-auto bg-white/10 rounded-2xl flex items-center justify-center mb-4 border border-white/10">
+                        <i class="ph-fill ph-users-three text-4xl text-aim-gold"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Community</h3>
+                    <p class="text-blue-200 text-sm">Open to all AIM students regardless of program. Designers, strategists, and coders — everyone has a role.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Members Section -->
+    <section class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full bg-blue-50 dark:bg-slate-800 border border-blue-100 dark:border-slate-700">
+                    <span class="w-2 h-2 rounded-full bg-aim-gold animate-pulse"></span>
+                    <span class="text-xs font-bold text-aim-blue dark:text-aim-gold tracking-wide uppercase">The People</span>
+                </div>
+                <h2 class="font-display text-3xl md:text-4xl font-black text-slate-900 dark:text-white mb-4">Meet the Builders</h2>
+                <p class="text-slate-500 dark:text-slate-400 max-w-xl mx-auto">A cross-functional team of AIM students passionate about technology, design, and impact.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Team Member 1 -->
+                <div class="group bg-white dark:bg-slate-800 rounded-3xl p-6 shadow-lg border border-slate-100 dark:border-slate-700 hover:border-aim-gold dark:hover:border-aim-gold transition-all duration-300 hover:-translate-y-2 text-center" data-aos="fade-up" data-aos-delay="0">
+                    <div class="w-24 h-24 mx-auto mb-5 rounded-full bg-gradient-to-br from-aim-blue to-blue-600 flex items-center justify-center text-white text-3xl font-black shadow-lg">
+                        <i class="ph-fill ph-code"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-lg text-slate-900 dark:text-white">Lead Developer</h3>
+                    <p class="text-aim-blue dark:text-aim-gold text-sm font-semibold mb-3">Full-Stack Engineering</p>
+                    <p class="text-slate-500 dark:text-slate-400 text-xs leading-relaxed">Architects the technical foundation. Specializes in React, Next.js, and cloud deployment.</p>
+                </div>
+
+                <!-- Team Member 2 -->
+                <div class="group bg-white dark:bg-slate-800 rounded-3xl p-6 shadow-lg border border-slate-100 dark:border-slate-700 hover:border-aim-gold dark:hover:border-aim-gold transition-all duration-300 hover:-translate-y-2 text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-24 h-24 mx-auto mb-5 rounded-full bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center text-white text-3xl font-black shadow-lg">
+                        <i class="ph-fill ph-paint-brush"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-lg text-slate-900 dark:text-white">UI/UX Designer</h3>
+                    <p class="text-aim-blue dark:text-aim-gold text-sm font-semibold mb-3">Design & User Experience</p>
+                    <p class="text-slate-500 dark:text-slate-400 text-xs leading-relaxed">Creates beautiful, intuitive interfaces. Ensures every pixel serves a purpose.</p>
+                </div>
+
+                <!-- Team Member 3 -->
+                <div class="group bg-white dark:bg-slate-800 rounded-3xl p-6 shadow-lg border border-slate-100 dark:border-slate-700 hover:border-aim-gold dark:hover:border-aim-gold transition-all duration-300 hover:-translate-y-2 text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-24 h-24 mx-auto mb-5 rounded-full bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center text-white text-3xl font-black shadow-lg">
+                        <i class="ph-fill ph-brain"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-lg text-slate-900 dark:text-white">AI Engineer</h3>
+                    <p class="text-aim-blue dark:text-aim-gold text-sm font-semibold mb-3">ML & Data Science</p>
+                    <p class="text-slate-500 dark:text-slate-400 text-xs leading-relaxed">Integrates LLMs and analytics. Turns raw data into actionable insights and smart features.</p>
+                </div>
+
+                <!-- Team Member 4 -->
+                <div class="group bg-white dark:bg-slate-800 rounded-3xl p-6 shadow-lg border border-slate-100 dark:border-slate-700 hover:border-aim-gold dark:hover:border-aim-gold transition-all duration-300 hover:-translate-y-2 text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-24 h-24 mx-auto mb-5 rounded-full bg-gradient-to-br from-aim-gold to-orange-500 flex items-center justify-center text-white text-3xl font-black shadow-lg">
+                        <i class="ph-fill ph-megaphone"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-lg text-slate-900 dark:text-white">Project Lead</h3>
+                    <p class="text-aim-blue dark:text-aim-gold text-sm font-semibold mb-3">Strategy & Coordination</p>
+                    <p class="text-slate-500 dark:text-slate-400 text-xs leading-relaxed">Connects with requestors, manages scope, and ensures on-time weekend delivery.</p>
+                </div>
+            </div>
+
+            <!-- Open roles notice -->
+            <div class="mt-12 text-center" data-aos="fade-up">
+                <p class="text-slate-500 dark:text-slate-400 text-sm">Plus a growing network of volunteer developers, designers, and strategists across AIM programs.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="py-20 px-6 bg-slate-100 dark:bg-slate-800/50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="font-display text-3xl md:text-4xl font-black text-slate-900 dark:text-white mb-4">Our Tech Stack</h2>
+                <p class="text-slate-500 dark:text-slate-400 max-w-xl mx-auto">We use industry-standard tools so our projects are scalable, maintainable, and production-ready.</p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-md border border-slate-100 dark:border-slate-700 text-center" data-aos="fade-up" data-aos-delay="0">
+                    <i class="ph-fill ph-file-html text-4xl text-orange-500 mb-3"></i>
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-1">Frontend</h4>
+                    <p class="text-slate-500 dark:text-slate-400 text-xs">React, Next.js, Tailwind CSS, HTML/CSS</p>
+                </div>
+                <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-md border border-slate-100 dark:border-slate-700 text-center" data-aos="fade-up" data-aos-delay="100">
+                    <i class="ph-fill ph-database text-4xl text-blue-500 mb-3"></i>
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-1">Backend</h4>
+                    <p class="text-slate-500 dark:text-slate-400 text-xs">Node.js, Python, Supabase, Firebase</p>
+                </div>
+                <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-md border border-slate-100 dark:border-slate-700 text-center" data-aos="fade-up" data-aos-delay="200">
+                    <i class="ph-fill ph-cloud text-4xl text-green-500 mb-3"></i>
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-1">Hosting</h4>
+                    <p class="text-slate-500 dark:text-slate-400 text-xs">Vercel, Netlify, Railway, AWS</p>
+                </div>
+                <div class="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-md border border-slate-100 dark:border-slate-700 text-center" data-aos="fade-up" data-aos-delay="300">
+                    <i class="ph-fill ph-robot text-4xl text-purple-500 mb-3"></i>
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-1">AI / ML</h4>
+                    <p class="text-slate-500 dark:text-slate-400 text-xs">OpenAI, Gemini, LangChain, Pandas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why We Do This (Mission) -->
+    <section class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="p-10 md:p-16 bg-aim-blue rounded-3xl text-white text-center relative overflow-hidden shadow-2xl" data-aos="zoom-in">
+                <div class="absolute top-0 right-0 w-96 h-96 bg-aim-gold rounded-full blur-3xl opacity-20 translate-x-1/3 -translate-y-1/3"></div>
+                <div class="absolute bottom-0 left-0 w-64 h-64 bg-blue-400 rounded-full blur-3xl opacity-10 -translate-x-1/3 translate-y-1/3"></div>
+                
+                <i class="ph-fill ph-student text-7xl text-aim-gold mb-6 relative z-10"></i>
+                <h2 class="font-display text-3xl md:text-5xl font-black mb-6 relative z-10">Why We Do This</h2>
+                <p class="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed relative z-10 font-light mb-8">
+                    "Make It Exist" is our way of giving back to the AIM community. We believe that great ideas shouldn't die because of a lack of technical skills or funding. We provide the labor, you provide the vision, and together we show that AIM students lead in tech innovation.
+                </p>
+                <div class="grid sm:grid-cols-3 gap-6 mt-10 max-w-2xl mx-auto relative z-10">
+                    <div>
+                        <p class="text-4xl font-black text-aim-gold">20+</p>
+                        <p class="text-blue-200 text-sm mt-1">Projects Shipped</p>
+                    </div>
+                    <div>
+                        <p class="text-4xl font-black text-aim-gold">48h</p>
+                        <p class="text-blue-200 text-sm mt-1">Avg. Delivery Time</p>
+                    </div>
+                    <div>
+                        <p class="text-4xl font-black text-aim-gold">$0</p>
+                        <p class="text-blue-200 text-sm mt-1">Avg. Cost to Students</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Us CTA Section -->
+    <section class="py-20 px-6 bg-slate-100 dark:bg-slate-800/50">
+        <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full bg-blue-50 dark:bg-slate-800 border border-blue-100 dark:border-slate-700">
+                <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                <span class="text-xs font-bold text-green-600 dark:text-green-400 tracking-wide uppercase">Now Recruiting</span>
+            </div>
+            <h2 class="font-display text-3xl md:text-4xl font-black text-slate-900 dark:text-white mb-6">Want to Join the Builders?</h2>
+            <p class="text-slate-600 dark:text-slate-300 text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
+                Whether you code, design, write, or just have wild ideas — there's a place for you. We're always looking for passionate AIM students who want to build something real.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="solutions.html" class="px-8 py-4 bg-aim-blue text-white rounded-xl font-bold shadow-xl shadow-blue-600/20 hover:bg-aim-navy transition flex items-center gap-2">
+                    Submit an Idea <i class="ph-bold ph-arrow-right"></i>
+                </a>
+                <a href="mailto:makeitexist@aim.edu" class="px-8 py-4 bg-white dark:bg-slate-800 text-slate-700 dark:text-white border border-slate-200 dark:border-slate-700 rounded-xl font-bold hover:border-aim-gold hover:text-aim-gold transition flex items-center gap-2">
+                    <i class="ph-bold ph-envelope"></i> Get in Touch
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 dark:bg-black text-slate-500 py-12 text-center text-sm border-t border-slate-800 dark:border-slate-900">
+        <div class="flex items-center justify-center gap-3 mb-4">
+            <img src="assets/aim-logo.png" alt="AIM Logo" class="w-6 h-6 rounded-full">
+            <span class="font-display font-bold text-slate-300 uppercase tracking-widest">Make It Exist</span>
+        </div>
+        <p class="mb-2">&copy; 2026 Make It Exist Project. A student initiative at AIM Manila.</p>
+        <p>Built with <span class="text-red-500">♥</span> and coffee at AIM Manila.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+        // Dark Mode Detection
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
+</body>
+</html>

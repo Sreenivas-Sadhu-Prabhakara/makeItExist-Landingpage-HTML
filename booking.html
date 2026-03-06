@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make It Exist | Book a Sprint</title>
+    <link rel="icon" type="image/png" href="assets/aim-logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        aim: {
+                            blue: '#0033A0',
+                            gold: '#FFB81C',
+                            navy: '#001F5F',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@700;800;900&display=swap');
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.85);
+            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 51, 160, 0.1);
+        }
+        .dark .glass {
+            background: rgba(15, 23, 42, 0.85);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #0033A0 0%, #2563EB 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .dark .text-gradient {
+            background: linear-gradient(135deg, #FFB81C 0%, #FBBF24 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-white overflow-x-hidden selection:bg-aim-gold selection:text-aim-blue transition-colors duration-300">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <img src="assets/aim-logo.png" alt="AIM Logo" class="w-10 h-10 object-contain">
+                <div class="leading-tight">
+                    <span class="block font-display font-black text-lg tracking-tighter text-aim-blue dark:text-white uppercase">Make It<span class="text-aim-gold">Exist</span></span>
+                    <span class="block text-[10px] font-bold tracking-widest text-slate-400 dark:text-slate-500 uppercase">Powered by AIM Students</span>
+                </div>
+            </a>
+
+            <div class="hidden md:flex items-center space-x-8 font-semibold text-sm text-slate-600 dark:text-slate-300">
+                <a href="index.html" class="hover:text-aim-blue dark:hover:text-aim-gold transition">Home</a>
+                <a href="solutions.html" class="hover:text-aim-blue dark:hover:text-aim-gold transition">The Offer</a>
+                <a href="team.html" class="hover:text-aim-blue dark:hover:text-aim-gold transition">The Builders</a>
+            </div>
+
+            <div id="userMenu" class="flex items-center gap-4">
+                <button id="loginBtn" class="hidden md:flex px-6 py-2.5 bg-aim-blue text-white rounded-lg font-bold hover:bg-aim-navy transition shadow-lg shadow-blue-900/20">
+                    <i class="ph-bold ph-google-logo mr-2"></i> Sign in with Google
+                </button>
+                <div id="userProfile" class="hidden flex items-center gap-3">
+                    <img id="userAvatar" src="" alt="Avatar" class="w-10 h-10 rounded-full">
+                    <div class="text-right">
+                        <p id="userName" class="font-bold text-sm"></p>
+                        <a href="/logout" class="text-xs text-aim-gold hover:underline">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="relative pt-40 pb-20 lg:pt-52 lg:pb-28 overflow-hidden">
+        <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-blue-100/40 to-transparent dark:from-aim-blue/10 rounded-full blur-3xl -z-10 translate-x-1/4 -translate-y-1/4"></div>
+
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 mb-8 rounded-full bg-blue-50 dark:bg-slate-800 border border-blue-100 dark:border-slate-700" data-aos="fade-down">
+                <span class="w-2 h-2 rounded-full bg-aim-gold animate-pulse"></span>
+                <span class="text-xs font-bold text-aim-blue dark:text-aim-gold tracking-wide uppercase">48-Hour Sprint Booking</span>
+            </div>
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-slate-900 dark:text-white mb-6 tracking-tight" data-aos="fade-up">
+                Reserve Your <span class="text-gradient">Sprint Slot</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+                Pick a weekend, choose your project tier, and we'll build it for you. No meetings, no delays — just results.
+            </p>
+        </div>
+    </header>
+
+    <!-- Booking Section -->
+    <section class="py-24 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div id="loginPrompt" class="mb-12 p-8 bg-aim-blue rounded-3xl text-white text-center">
+                <i class="ph-fill ph-sign-in text-5xl mb-4"></i>
+                <h2 class="font-display text-2xl font-black mb-3">Sign In to Book</h2>
+                <p class="text-blue-100 mb-6">Connect with your Google account to reserve a sprint slot and track your project.</p>
+                <a href="/auth/google" class="inline-flex items-center gap-2 px-8 py-4 bg-white text-aim-blue rounded-xl font-bold hover:bg-slate-100 transition shadow-xl">
+                    <i class="ph-bold ph-google-logo"></i> Continue with Google
+                </a>
+            </div>
+
+            <div id="bookingForm" class="hidden">
+                <!-- Calendar & Slots Selection -->
+                <div class="grid lg:grid-cols-2 gap-8 mb-12">
+                    <!-- Calendar -->
+                    <div class="bg-white dark:bg-slate-800 rounded-3xl p-8 shadow-lg border border-slate-100 dark:border-slate-700" data-aos="fade-right">
+                        <h3 class="font-display text-2xl font-bold text-slate-900 dark:text-white mb-6">Select a Date</h3>
+                        <input type="date" id="calendarInput" class="w-full p-4 border-2 border-aim-blue rounded-xl font-semibold dark:bg-slate-700 dark:border-aim-gold" min="">
+                        <div id="availableSlots" class="mt-6"></div>
+                    </div>
+
+                    <!-- Project Form -->
+                    <div class="bg-white dark:bg-slate-800 rounded-3xl p-8 shadow-lg border border-slate-100 dark:border-slate-700" data-aos="fade-left">
+                        <h3 class="font-display text-2xl font-bold text-slate-900 dark:text-white mb-6">Your Project</h3>
+                        
+                        <!-- Project Type -->
+                        <label class="block mb-4">
+                            <span class="font-semibold text-slate-900 dark:text-white mb-2 block">Project Type *</span>
+                            <select id="projectType" class="w-full p-3 border-2 border-slate-200 dark:border-slate-600 rounded-xl dark:bg-slate-700 font-semibold focus:border-aim-blue dark:focus:border-aim-gold transition">
+                                <option value="">Choose a tier...</option>
+                                <option value="website">Website (Free)</option>
+                                <option value="webapp">Web & Mobile App (Slight Charges)</option>
+                                <option value="ai">AI & Analytics (Project-Based)</option>
+                            </select>
+                        </label>
+
+                        <!-- Project Name -->
+                        <label class="block mb-4">
+                            <span class="font-semibold text-slate-900 dark:text-white mb-2 block">Project Name *</span>
+                            <input type="text" id="projectName" placeholder="e.g., Club Portal, Event Booking App" class="w-full p-3 border-2 border-slate-200 dark:border-slate-600 rounded-xl dark:bg-slate-700 focus:border-aim-blue dark:focus:border-aim-gold transition">
+                        </label>
+
+                        <!-- Description -->
+                        <label class="block mb-4">
+                            <span class="font-semibold text-slate-900 dark:text-white mb-2 block">Project Description</span>
+                            <textarea id="projectDesc" placeholder="Brief description of what you need..." rows="3" class="w-full p-3 border-2 border-slate-200 dark:border-slate-600 rounded-xl dark:bg-slate-700 focus:border-aim-blue dark:focus:border-aim-gold transition"></textarea>
+                        </label>
+
+                        <!-- Phone -->
+                        <label class="block">
+                            <span class="font-semibold text-slate-900 dark:text-white mb-2 block">Phone (Optional)</span>
+                            <input type="tel" id="projectPhone" placeholder="+63 9XX XXX XXXX" class="w-full p-3 border-2 border-slate-200 dark:border-slate-600 rounded-xl dark:bg-slate-700 focus:border-aim-blue dark:focus:border-aim-gold transition">
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="text-center" data-aos="fade-up">
+                    <button id="submitBtn" class="px-10 py-4 bg-aim-blue text-white rounded-xl font-bold shadow-xl shadow-blue-600/20 hover:bg-aim-navy transition flex items-center gap-2 mx-auto">
+                        <i class="ph-bold ph-calendar-check"></i> Confirm Booking
+                    </button>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm mt-4">You'll receive a confirmation email once approved.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-20 px-6 bg-slate-100 dark:bg-slate-800/50">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="font-display text-3xl md:text-4xl font-black text-slate-900 dark:text-white mb-4">What Happens Next</h2>
+                <p class="text-slate-500 dark:text-slate-400 max-w-xl mx-auto">After you book, here's the typical timeline for your project.</p>
+            </div>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="text-center" data-aos="fade-up" data-aos-delay="0">
+                    <div class="w-16 h-16 bg-aim-blue text-white rounded-full flex items-center justify-center font-black text-lg mx-auto mb-4">1</div>
+                    <h3 class="font-bold text-slate-900 dark:text-white mb-2">Confirmation</h3>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm">We confirm receipt of your booking within 24 hours.</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-aim-blue text-white rounded-full flex items-center justify-center font-black text-lg mx-auto mb-4">2</div>
+                    <h3 class="font-bold text-slate-900 dark:text-white mb-2">Kickoff Call</h3>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm">Quick meeting to nail down scope and technical requirements.</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-aim-blue text-white rounded-full flex items-center justify-center font-black text-lg mx-auto mb-4">3</div>
+                    <h3 class="font-bold text-slate-900 dark:text-white mb-2">Weekend Sprint</h3>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm">Fri PM – Sun PM: full build, design, and testing.</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-aim-blue text-white rounded-full flex items-center justify-center font-black text-lg mx-auto mb-4">4</div>
+                    <h3 class="font-bold text-slate-900 dark:text-white mb-2">Deployed</h3>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm">Live by Sunday evening. Fully functional and ready to use.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 dark:bg-black text-slate-500 py-12 text-center text-sm border-t border-slate-800 dark:border-slate-900">
+        <div class="flex items-center justify-center gap-3 mb-4">
+            <img src="assets/aim-logo.png" alt="AIM Logo" class="w-6 h-6 rounded-full">
+            <span class="font-display font-bold text-slate-300 uppercase tracking-widest">Make It Exist</span>
+        </div>
+        <p class="mb-2">&copy; 2026 Make It Exist Project. A student initiative at AIM Manila.</p>
+        <p>Built with <span class="text-red-500">♥</span> and coffee at AIM Manila.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+        // Dark Mode Detection
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+
+        // Check user authentication
+        async function checkAuth() {
+            try {
+                const res = await fetch('/api/user');
+                if (res.ok) {
+                    const user = await res.json();
+                    showLoggedInUI(user);
+                } else {
+                    showLoginPrompt();
+                }
+            } catch (err) {
+                console.error('Auth check failed:', err);
+                showLoginPrompt();
+            }
+        }
+
+        function showLoggedInUI(user) {
+            document.getElementById('loginPrompt').classList.add('hidden');
+            document.getElementById('bookingForm').classList.remove('hidden');
+            document.getElementById('loginBtn').classList.add('hidden');
+            document.getElementById('userProfile').classList.remove('hidden');
+            document.getElementById('userAvatar').src = user.picture;
+            document.getElementById('userName').textContent = user.name;
+
+            // Set min date to today
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('calendarInput').setAttribute('min', today);
+
+            // Fetch available slots
+            fetchAvailableSlots();
+        }
+
+        function showLoginPrompt() {
+            document.getElementById('loginPrompt').classList.remove('hidden');
+            document.getElementById('bookingForm').classList.add('hidden');
+            document.getElementById('loginBtn').classList.remove('hidden');
+            document.getElementById('userProfile').classList.add('hidden');
+        }
+
+        async function fetchAvailableSlots() {
+            try {
+                const res = await fetch('/api/available-slots');
+                const slots = await res.json();
+                console.log('Available slots:', slots);
+            } catch (err) {
+                console.error('Failed to fetch slots:', err);
+            }
+        }
+
+        // Form submission
+        document.getElementById('submitBtn').addEventListener('click', async () => {
+            const selectedDate = document.getElementById('calendarInput').value;
+            const projectType = document.getElementById('projectType').value;
+            const projectName = document.getElementById('projectName').value;
+            const description = document.getElementById('projectDesc').value;
+            const phone = document.getElementById('projectPhone').value;
+
+            if (!selectedDate || !projectType || !projectName) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+
+            try {
+                const res = await fetch('/api/bookings', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        project_type: projectType,
+                        project_name: projectName,
+                        description,
+                        preferred_date: selectedDate,
+                        phone
+                    })
+                });
+
+                if (res.ok) {
+                    const data = await res.json();
+                    alert('🎉 Booking confirmed! Check your email for details.');
+                    // Reset form
+                    document.getElementById('projectName').value = '';
+                    document.getElementById('projectType').value = '';
+                    document.getElementById('projectDesc').value = '';
+                    document.getElementById('projectPhone').value = '';
+                    document.getElementById('calendarInput').value = '';
+                } else {
+                    const error = await res.json();
+                    alert(`❌ ${error.error}`);
+                }
+            } catch (err) {
+                console.error('Booking failed:', err);
+                alert('Booking failed. Please try again.');
+            }
+        });
+
+        // Initialize
+        checkAuth();
+    </script>
+</body>
+</html>
