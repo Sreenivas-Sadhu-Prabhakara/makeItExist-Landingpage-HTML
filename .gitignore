@@ -51,3 +51,12 @@ secrets/
 .cache/
 .temp/
 .tmp/
+
+# OAuth client secret downloads & credential notes
+client_secret_*.json
+*client_secret*.json
+Cred.md
+
+# Env var reference dumps (contain real values)
+NETLIFY_VARIABLES.txt
+VERCEL_VARIABLES.txt
