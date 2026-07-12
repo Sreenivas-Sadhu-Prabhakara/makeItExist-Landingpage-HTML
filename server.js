@@ -30,7 +30,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Serve the static front-end (index/solutions/team/booking/admin + assets).
 // On Vercel these are served from the CDN via vercel.json; this covers local dev.
-app.use(express.static(path.join(__dirname)));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Session setup — persisted in Postgres so sessions survive serverless invocations
 const PgSession = require('connect-pg-simple')(session);

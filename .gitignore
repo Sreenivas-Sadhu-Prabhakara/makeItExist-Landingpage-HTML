@@ -60,3 +60,4 @@ Cred.md
 # Env var reference dumps (contain real values)
 NETLIFY_VARIABLES.txt
 VERCEL_VARIABLES.txt
+.vercel
